@@ -13,14 +13,20 @@ SLIME (Soil LIfe MEtaweb) is a knowledge graph on the trophic ecology of soil or
 
 ## How to build a local copy of SLIME?
 
-### 1. Download datasets
+### 1. Download the datasets
 
 Some data sources do not provide an API or URL for downloading datasets programatically. You will need to download these datasets manually.
 
 | Dataset | URL | Copy file to |
-| ------- | --- | ------- |
+| ------- | --- | ------------ |
 | FungalTraits | [Download link](https://docs.google.com/spreadsheets/d/1cxImJWMYVTr6uIQXcTLwK1YNNzQvKJJifzzNpKCM6O0/edit?usp=sharing) | sources/fungaltraits/data |
 | GlobalAnts   | [Download link](https://globalants.org/AntsDB/Entry) | sources/global_ants/data |
+
+After downloading the datasets, ensure that the correct file path is configured in each source configuration file (*source.cfg* file in the source directory):
+```ini
+[extract.file]
+file_path=<path-to-the-data-file>
+```
 
 ### 2. Install inteGraph
 
