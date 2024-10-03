@@ -1,0 +1,10 @@
+{
+  "globi": {
+    "conn_type": "http",
+    "description": null,
+    "host": "https://api.globalbioticinteractions.org",
+    "port": null,
+    "schema": "https",
+    "extra": null
+  }
+}

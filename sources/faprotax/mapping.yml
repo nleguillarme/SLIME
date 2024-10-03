@@ -1,0 +1,13 @@
+methanotrophy: http://purl.org/sfwo/SFWO_0000579
+chemoheterotrophy: http://purl.obolibrary.org/obo/ECOCORE_00000132
+methylotrophy: http://purl.org/sfwo/SFWO_0000577
+photoautotrophy: http://purl.obolibrary.org/obo/ECOCORE_00000130
+photoheterotrophy: http://purl.obolibrary.org/obo/ECOCORE_00000131
+phototrophy: http://purl.org/sfwo/SFWO_0000007
+animal_parasites_or_symbionts: http://purl.org/sfwo/SFWO_0000054
+invertebrate_parasites: http://purl.org/sfwo/SFWO_0000585
+human_pathogens_all: http://purl.org/sfwo/SFWO_0000586
+intracellular_parasites: http://purl.obolibrary.org/obo/ECOCORE_00000151
+predatory_or_exoparasitic: http://purl.org/sfwo/SFWO_0000061
+nonphotosynthetic_cyanobacteria:
+photosynthetic_cyanobacteria: http://purl.obolibrary.org/obo/ECOCORE_00000130

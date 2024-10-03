@@ -1,0 +1,9 @@
+TG_nematoda_Bacterial-feeders: http://purl.obolibrary.org/obo/ECOCORE_00000098
+TG_nematoda_Dispersal-forms-parasites: http://purl.obolibrary.org/obo/ECOCORE_00000146
+TG_nematoda_Plant-ectoparasite: http://purl.org/sfwo/SFWO_0000024
+TG_nematoda_Fungal-feeders: http://purl.obolibrary.org/obo/ECOCORE_00000015
+TG_nematoda_Plant-endoparasites-mig: http://purl.org/sfwo/SFWO_0000024
+TG_nematoda_Omnivores: http://purl.org/sfwo/SFWO_0000063
+TG_nematoda_Predators: http://purl.obolibrary.org/obo/ECOCORE_00000089
+TG_nematoda_Plant-endoparasites-sedent: http://purl.org/sfwo/SFWO_0000024
+TG_nematoda_Plant-endoparasite-fac: http://purl.org/sfwo/SFWO_0000024

@@ -1,0 +1,21 @@
+symbiotOf: http://purl.obolibrary.org/obo/RO_0002440
+parasiteOf: http://purl.obolibrary.org/obo/RO_0002444
+preysOn: http://purl.obolibrary.org/obo/RO_0002470
+Detritus: http://purl.obolibrary.org/obo/ENVO_01001103
+older organic debris: http://purl.obolibrary.org/obo/ENVO_01001103
+Fungal mycelium: http://purl.obolibrary.org/obo/FAO_0000011
+POM (detritus): http://purl.obolibrary.org/obo/ENVO_01001103
+diatoms - blue-green algae: http://purl.org/sfwo/SFWO_0000464
+plants - dead plants: 
+Soil microflora:
+humus: http://purl.obolibrary.org/obo/ENVO_00001998
+Algae: http://purl.org/sfwo/SFWO_0000464
+mykorrhiza:
+saphrophytes:
+amoebae:
+dung: http://purl.obolibrary.org/obo/UBERON_0001988
+organic debris: http://purl.obolibrary.org/obo/ENVO_01001103
+bean seedlings: http://purl.org/sfwo/SFWO_0000144
+microbes: http://purl.org/sfwo/SFWO_0000062
+litter: http://purl.org/sfwo/SFWO_0000147
+

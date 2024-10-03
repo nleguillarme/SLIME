@@ -1,2 +1,1 @@
-# SLIME
-SLIME: a semantic soil-life metaweb
+# SLIME: a semantic soil-life metaweb

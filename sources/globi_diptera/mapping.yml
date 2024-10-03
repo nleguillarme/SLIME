@@ -1,0 +1,37 @@
+symbiotOf: http://purl.obolibrary.org/obo/RO_0002440
+parasiteOf: http://purl.obolibrary.org/obo/RO_0002444
+preysOn: http://purl.obolibrary.org/obo/RO_0002470
+Detritus: http://purl.obolibrary.org/obo/ENVO_01001103
+older organic debris: http://purl.obolibrary.org/obo/ENVO_01001103
+Fungal mycelium: http://purl.obolibrary.org/obo/FAO_0000011
+POM (detritus): http://purl.obolibrary.org/obo/ENVO_01001103
+diatoms - blue-green algae: http://purl.org/sfwo/SFWO_0000464
+plants - dead plants: 
+Soil microflora:
+humus: http://purl.obolibrary.org/obo/ENVO_00001998
+Algae: http://purl.org/sfwo/SFWO_0000464
+mykorrhiza:
+saphrophytes:
+amoebae:
+dung: http://purl.obolibrary.org/obo/UBERON_0001988
+organic debris: http://purl.obolibrary.org/obo/ENVO_01001103
+bean seedlings: http://purl.org/sfwo/SFWO_0000144
+dead organic matter: http://purl.obolibrary.org/obo/ENVO_01001103
+rabbit carcass (L. californicus): http://purl.org/sfwo/SFWO_0000104
+carrion: http://purl.obolibrary.org/obo/UBERON_0008979
+mammal carcass: http://purl.org/sfwo/SFWO_0000104
+carrion-detritus: http://purl.obolibrary.org/obo/UBERON_0008979
+large detritus particles: http://purl.obolibrary.org/obo/ENVO_01001103
+animal carcasses: http://purl.obolibrary.org/obo/UBERON_0008979
+large umbels:
+decaying organic matter: http://purl.obolibrary.org/obo/ENVO_01001103
+sap and plant juices: http://purl.obolibrary.org/obo/PO_0025538
+bacteria - fungi: http://purl.org/sfwo/SFWO_0000062
+alpine vegetation:
+grasses - sedges - willows:
+marsh plants:
+microbial mat:
+Sap: http://purl.obolibrary.org/obo/PO_0025538
+Plant juices: http://purl.org/sfwo/SFWO_0000049
+Leaves: http://purl.obolibrary.org/obo/PO_0025034
+Hyphomycete fungal hyphae: http://purl.obolibrary.org/obo/FAO_0001001
