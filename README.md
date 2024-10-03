@@ -4,6 +4,8 @@ SLIME (Soil LIfe MEtaweb) is a knowledge graph on the trophic ecology of soil or
 
 ## What does this repository contain?
 
+- *graph.cfg*: an INI-like configuration file. In this file, you can specify the URI of the knowledge graph, change the path to the directory containing the data source configuration files, configure your triplestore connection and declare the ontologies that will be used to annotate the integrated data.
+
 ## How to build a local copy of SLIME?
 
 ## How to retrieve information from SLIME?
