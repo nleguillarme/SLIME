@@ -13,6 +13,27 @@ SLIME (Soil LIfe MEtaweb) is a knowledge graph on the trophic ecology of soil or
 
 ## How to build a local copy of SLIME?
 
+### 1. Set up your triplestore
+
+We recommend that you use [GraphDB Free](https://graphdb.ontotext.com/). 
+See the documentation on [how to install GraphDB](https://graphdb.ontotext.com/documentation/10.7/how-to-install-graphdb.html) as a desktop or a server application. 
+
+Once GraphDB is installed and running, [create a new repository](https://graphdb.ontotext.com/documentation/10.7/creating-a-repository.html). Choose a name for your repository (e.g. `slime`).
+Make sure you select `owl2-rl` or `owl2-rl-optimized` as the ruleset.
+
+Configure the connection to your GraphDB instance in the `[load]` section of *graph.cfg*:
+
+```ini
+[load]
+id=graphdb
+conn_type=http
+host=<ip-of-your-graphdb-instance>
+port=7200
+user=<user-login-if-any>
+password=<user-password-if-any>
+repository=slime
+```
+
 ## How to retrieve information from SLIME?
 
 ## How to cite SLIME?
