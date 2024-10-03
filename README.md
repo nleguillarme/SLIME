@@ -17,8 +17,9 @@ SLIME (Soil LIfe MEtaweb) is a knowledge graph on the trophic ecology of soil or
 
 Some data sources do not provide an API or URL for downloading datasets programatically. You will need to download these datasets manually.
 
-| Dataset | URL | Copy file to |
-| ------- | --- | ------------ |
+| Dataset | URL | Copy data file to |
+| ------- | --- | ----------------- |
+| BETSI        | [Download link](https://portail.betsi.cnrs.fr/request-traits) | sources/betsi/data |
 | FungalTraits | [Download link](https://docs.google.com/spreadsheets/d/1cxImJWMYVTr6uIQXcTLwK1YNNzQvKJJifzzNpKCM6O0/edit?usp=sharing) | sources/fungaltraits/data |
 | GlobalAnts   | [Download link](https://globalants.org/AntsDB/Entry) | sources/global_ants/data |
 
