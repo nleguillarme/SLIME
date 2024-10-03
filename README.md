@@ -13,15 +13,22 @@ SLIME (Soil LIfe MEtaweb) is a knowledge graph on the trophic ecology of soil or
 
 ## How to build a local copy of SLIME?
 
-### 1. Download the datasets
+### 1. Clone this repository
+
+Clone this repository using the following command:
+```bash
+$ git clone https://github.com/nleguillarme/SLIME.git
+```
+
+### 2. Download the datasets
 
 Some data sources do not provide an API or URL for downloading datasets programatically. You will need to download these datasets manually.
 
 | Dataset | URL | Copy data file to |
 | ------- | --- | ----------------- |
-| BETSI        | [Download link](https://portail.betsi.cnrs.fr/request-traits) | sources/betsi/data |
-| FungalTraits | [Download link](https://docs.google.com/spreadsheets/d/1cxImJWMYVTr6uIQXcTLwK1YNNzQvKJJifzzNpKCM6O0/edit?usp=sharing) | sources/fungaltraits/data |
-| GlobalAnts   | [Download link](https://globalants.org/AntsDB/Entry) | sources/global_ants/data |
+| BETSI        | [Download link](https://portail.betsi.cnrs.fr/request-traits) | SLIME/sources/betsi/data |
+| FungalTraits | [Download link](https://docs.google.com/spreadsheets/d/1cxImJWMYVTr6uIQXcTLwK1YNNzQvKJJifzzNpKCM6O0/edit?usp=sharing) | SLIME/sources/fungaltraits/data |
+| GlobalAnts   | [Download link](https://globalants.org/AntsDB/Entry) | SLIME/sources/global_ants/data |
 
 After downloading the datasets, ensure that the correct file path is configured in each source configuration file (*source.cfg* file in the source directory):
 ```ini
@@ -29,7 +36,7 @@ After downloading the datasets, ensure that the correct file path is configured 
 file_path=<path-to-the-data-file>
 ```
 
-### 2. Install inteGraph
+### 3. Install inteGraph
 
 [inteGraph](https://nleguillarme.github.io/inteGraph/) is a toolbox that helps you build and execute biodiversity data integration pipelines to create RDF knowledge graphs from multiple data sources. inteGraph pipelines are defined in configuration files. We provide one such configuration file per data source in the `sources` directory of this repository.
 
@@ -43,7 +50,7 @@ $ git clone https://github.com/nleguillarme/inteGraph.git
 $ cd inteGraph ; sh install.sh
 ```
 
-### 3. Set up your triplestore
+### 4. Set up your triplestore
 
 We recommend that you use [GraphDB Free](https://graphdb.ontotext.com/). 
 See the documentation on [how to install GraphDB](https://graphdb.ontotext.com/documentation/10.7/how-to-install-graphdb.html) as a desktop or a server application. 
@@ -64,13 +71,15 @@ password=<user-password-if-any>
 repository=slime
 ```
 
-### 4. Run inteGraph
+### 5. Run inteGraph
 
 To run inteGraph, execute the following command:
 
 ```bash
-$ make up
+$ export INTEGRAPH__CONFIG__HOST_CONFIG_DIR=<path-to-SLIME> ; make up
 ```
+Make sure you replace `<path-to-SLIME>` in the command with the path to the local copy of this repository.
+
 This will start an instance of Apache Airflow, which can be found at http://localhost:8080/home.
 
 The DAG tab lists all the pipelines generated from the configuration files:
