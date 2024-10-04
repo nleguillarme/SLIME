@@ -104,9 +104,11 @@ The DAG tab lists all the pipelines generated from the configuration files:
 
 ### 6. Run the pipelines
 
-To execute a pipeline, click on the Trigger DAG button in the Actions column. Then click on the pipeline name to monitor its execution.
+To execute a pipeline, click on the Pause/Unpause DAG button on the left-hand side. Then click on the pipeline name to monitor its execution.
 
 After triggering the pipeline, it will start running and you will see its current state represented by colors.
+
+![Pipeline running](https://github.com/nleguillarme/SLIME/blob/main/img/running.png?raw=true)
 
 A failed task appears in red in the interface. It’s not uncommon for tasks to fail, which could be for a multitude of reasons (e.g., an external service is down, network connectivity issues). In this situation, you can restart the pipeline from the point of failure by clicking on the failed task and then clicking on the Clear Task button in the top right-hand corner.
 
