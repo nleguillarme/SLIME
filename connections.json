@@ -6,5 +6,13 @@
     "port": null,
     "schema": "https",
     "extra": null
+  },
+  "bacdive": {
+    "conn_type": "http",
+    "description": null,
+    "host": "https://sparql.dsmz.de/api",
+    "port": null,
+    "schema": "https",
+    "extra": null
   }
 }

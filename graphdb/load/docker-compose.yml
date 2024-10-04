@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  graphdb:
+    container_name: graphdb-load
+    build:
+      context: ../graphdb-docker
+      dockerfile: Dockerfile
+
+    # Load all files from ../import in repo defined in ./graphdb-repo-config.ttl
+    entrypoint: [ "/opt/graphdb/dist/bin/importrdf", "-Dgraphdb.inference.concurrency=20", "load", "-f", "-c", "/opt/graphdb/graphdb-repo-config.ttl", "-m", "parallel",  "/opt/graphdb/home/graphdb-import" ] 
+
+    environment: 
+      GDB_JAVA_OPTS: >-
+        -Xmx${GRAPHDB_HEAP_SIZE} -Xms${GRAPHDB_HEAP_SIZE}
+        -Dgraphdb.home=/opt/graphdb/home
+        -Dgraphdb.workbench.importDirectory=/opt/graphdb/home/graphdb-import
+        -Dgraphdb.workbench.cors.enable=true
+        -Denable-context-index=true
+        -Dentity-pool-implementation=transactional
+        -Dhealth.max.query.time.seconds=60
+        -Dgraphdb.append.request.id.headers=true
+        -Dreuse.vars.in.subselects=true
+    volumes:
+      # Change folders in the .env file or directly here
+      - ../graphdb-data:/opt/graphdb/home
+      - ../import:/opt/graphdb/home/graphdb-import
+      - ../graphdb-repo-config.ttl:/opt/graphdb/graphdb-repo-config.ttl
