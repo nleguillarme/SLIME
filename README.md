@@ -100,6 +100,8 @@ This will start an instance of Apache Airflow, which can be found at http://loca
 
 The DAG tab lists all the pipelines generated from the configuration files:
 
+![Airflow DAG list](https://github.com/nleguillarme/SLIME/blob/main/img/dags.png?raw=true)
+
 ### 6. Run the pipelines
 
 To execute a pipeline, click on the Trigger DAG button in the Actions column. Then click on the pipeline name to monitor its execution.
