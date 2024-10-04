@@ -88,9 +88,10 @@ repository=slime
 
 ### 5. Run inteGraph
 
-To run inteGraph, execute the following command:
+To run inteGraph, execute the following commands:
 
 ```bash
+$ cd inteGraph
 $ export INTEGRAPH__CONFIG__HOST_CONFIG_DIR=<path-to-this-repository> ; make up
 ```
 Make sure you replace `<path-to-this-repository>` in the command with the path to your local copy of this repository.
@@ -99,7 +100,7 @@ This will start an instance of Apache Airflow, which can be found at http://loca
 
 The DAG tab lists all the pipelines generated from the configuration files:
 
-### 5. Run the pipelines
+### 6. Run the pipelines
 
 To execute a pipeline, click on the Trigger DAG button in the Actions column. Then click on the pipeline name to monitor its execution.
 
@@ -109,7 +110,7 @@ A failed task appears in red in the interface. It’s not uncommon for tasks to 
 
 If the task keeps failing, you may want to examine the problem in more detail. You can access the task logs by clicking on the failed task and opening the Logs tab.
 
-### 6. Stop inteGraph
+### 7. Stop inteGraph
 
 Once all the pipelines have been run successfully, you can stop inteGraph with the following command: 
 ```bash
