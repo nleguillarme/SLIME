@@ -8,6 +8,7 @@ SLIME (Soil LIfe MEtaweb) is a knowledge graph on the trophic ecology of soil or
 - *connections.json*: a JSON configuration file used for storing credentials and other information necessary for connecting to external services (e.g. the GloBi API).
 - *config-morph.ini*: a INI file used to configure the [RDF materialization process](https://morph-kgc.readthedocs.io/en/latest/documentation/#configuration).
 - *sources*: a directory contaning the configuration and mapping files for the different data sources.
+- *graphdb*: a directory containing a Makefile to help you set up an instance of the GraphDB Free triplestore.
 - *LICENSE*: a file containing the licence text.
 - *README.md*: this file.
 
@@ -20,23 +21,7 @@ Clone this repository using the following command:
 $ git clone https://github.com/nleguillarme/SLIME.git
 ```
 
-### 2. Download the datasets
-
-Some data sources do not provide an API or URL for downloading datasets programatically. You will need to download these datasets manually.
-
-| Dataset | URL | Copy data file to |
-| ------- | --- | ----------------- |
-| BETSI        | [Download link](https://portail.betsi.cnrs.fr/request-traits) | SLIME/sources/betsi/data |
-| FungalTraits | [Download link](https://docs.google.com/spreadsheets/d/1cxImJWMYVTr6uIQXcTLwK1YNNzQvKJJifzzNpKCM6O0/edit?usp=sharing) | SLIME/sources/fungaltraits/data |
-| GlobalAnts   | [Download link](https://globalants.org/AntsDB/Entry) | SLIME/sources/global_ants/data |
-
-After downloading the datasets, ensure that the correct file path is configured in each source configuration file (*source.cfg* file in the source directory):
-```ini
-[extract.file]
-file_path=<path-to-the-data-file>
-```
-
-### 3. Install inteGraph
+### 2. Install inteGraph
 
 [inteGraph](https://nleguillarme.github.io/inteGraph/) is a toolbox that helps you build and execute biodiversity data integration pipelines to create RDF knowledge graphs from multiple data sources. inteGraph pipelines are defined in configuration files. We provide one such configuration file per data source in the `sources` directory of this repository.
 
@@ -50,21 +35,51 @@ $ git clone https://github.com/nleguillarme/inteGraph.git
 $ cd inteGraph ; sh install.sh
 ```
 
+### 3. Download missing datasets
+
+Some data sources do not provide an API or URL for downloading datasets programatically. You will need to download these datasets manually.
+
+| Dataset | URL | Copy data file to |
+| ------- | --- | ----------------- |
+| BETSI        | [Download link](https://portail.betsi.cnrs.fr/request-traits) | SLIME/sources/betsi/data |
+| FungalTraits | [Download link](https://docs.google.com/spreadsheets/d/1cxImJWMYVTr6uIQXcTLwK1YNNzQvKJJifzzNpKCM6O0/edit?usp=sharing) | SLIME/sources/fungaltraits/data |
+| GlobalAnts   | [Download link](https://globalants.org/AntsDB/Entry) | SLIME/sources/global_ants/data |
+
+After downloading the datasets, ensure that the correct file path is configured for each source (check the `[extract.file]` section in the *source.cfg* file for each source):
+```ini
+[extract.file]
+file_path=<path-to-the-data-file>
+```
+
 ### 4. Set up your triplestore
 
-We recommend that you use [GraphDB Free](https://graphdb.ontotext.com/). 
-See the documentation on [how to install GraphDB](https://graphdb.ontotext.com/documentation/10.7/how-to-install-graphdb.html) as a desktop or a server application. 
+We provide a Makefile to help you set up an instance of GraphDB Free in a docker container. You will need docker, docker-compose and make installed on your machine.
+1. Move to the *graphdb* directory
+```bash
+$ cd graphdb
+```
+2. Run the following command to build a docker image for GraphDB Free
+```bash
+$ make build
+```
+3. Run the following command to load the ontology into a new repository called `slime` (N.B. this may take some time)
+```bash
+$ make load
+```
+4. Start GraphDB by running the following command
+```bash
+$ make start
+```
 
-Once GraphDB is installed and running, [create a new repository](https://graphdb.ontotext.com/documentation/10.7/creating-a-repository.html). Choose a name for your repository (e.g. `slime`).
-Make sure you select `owl2-rl` or `owl2-rl-optimized` as the ruleset.
+The GraphDB Workbench is accessible at http://localhost:7200/.
 
-Configure the connection to your GraphDB instance in the `[load]` section of *graph.cfg*:
+Configure the connection to the repository in the `[load]` section of *graph.cfg*:
 
 ```ini
 [load]
 id=graphdb
 conn_type=http
-host=<ip-of-your-graphdb-instance>
+host=0.0.0.0
 port=7200
 user=<user-login-if-any>
 password=<user-password-if-any>
@@ -76,9 +91,9 @@ repository=slime
 To run inteGraph, execute the following command:
 
 ```bash
-$ export INTEGRAPH__CONFIG__HOST_CONFIG_DIR=<path-to-SLIME> ; make up
+$ export INTEGRAPH__CONFIG__HOST_CONFIG_DIR=<path-to-this-repository> ; make up
 ```
-Make sure you replace `<path-to-SLIME>` in the command with the path to the local copy of this repository.
+Make sure you replace `<path-to-this-repository>` in the command with the path to your local copy of this repository.
 
 This will start an instance of Apache Airflow, which can be found at http://localhost:8080/home.
 
