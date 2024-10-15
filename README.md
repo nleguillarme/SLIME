@@ -160,10 +160,7 @@ Each function in SLIMER wraps a SPARQL query template that allows users to retri
 3 Nothrus   NA      Nothrus silvestris <chr [4]> SFWO:0000479 detritivorous     <chr [1]> slime:betsi           true    
 4 Nothrus   NA      Nothrus silvestris <chr [4]> SFWO:0000483 fungivorous       <chr [1]> slime:betsi           true    
 5 Nothrus   NA      Nothrus silvestris <chr [4]> SFWO:0000485 microbivorous     <chr [1]> slime:betsi           true    
-6 Nothrus   NA      Nothrus silvestris <chr [4]> SFWO:0000513 microphytophagous <chr [1]> slime:betsi           true    
-7 Nothrus   NA      Nothrus silvestris <chr [4]> SFWO:0000477 carnivorous       <chr [1]> slime:globi_oribatida true    
-8 Nothrus   NA      Nothrus silvestris <chr [4]> SFWO:0000491 predaceous        <chr [1]> slime:globi_oribatida true    
-9 Nothrus   NA      Nothrus silvestris <chr [4]> SFWO:0000497 nematophagous     <chr [1]> slime:globi_oribatida true
+6 Nothrus   NA      Nothrus silvestris <chr [4]> SFWO:0000513 microphytophagous <chr [1]> slime:betsi           true
 ```
 
 See the package [vignette](https://github.com/nleguillarme/SLIME/blob/main/SLIMER/vignettes/SLIMER.Rmd) for more examples on how to use SLIMER.
