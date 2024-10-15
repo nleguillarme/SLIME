@@ -16,10 +16,10 @@ build:
 import:
 	mkdir -p import
 	curl -L https://github.com/nleguillarme/soil_food_web_ontology/releases/latest/download/sfwo.owl --output import/sfwo.owl
-	curl -L https://github.com/obophenotype/ncbitaxon/releases/latest/download/ncbitaxon.owl --output import/ncbitaxon.owl
+	# curl -L https://github.com/obophenotype/ncbitaxon/releases/latest/download/ncbitaxon.owl --output import/ncbitaxon.owl
 
 load:
-	cd load ; docker compose --env-file load.params -f docker-compose.yml up
+	cd load ; docker compose --env-file ../graphdb.params -f docker-compose.yml up
 	
 start:
 	cp docker-compose.yml ./graphdb-docker
