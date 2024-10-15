@@ -125,13 +125,13 @@ $ make down
 
 You can use SPARQL queries to retrieve information from SLIME. There are three ways to do this:
 
-### 1. Using the GraphDB Workbench. 
+### 1. Using the GraphDB Workbench
 
 Access the GraphDB Workbench at http://localhost:7200/. Choose SPARQL from the navigation bar, enter your query and hit Run, as shown in this example:
 
 ![SPARQL Query and Update](https://github.com/nleguillarme/SLIME/blob/main/img/sparql_workbench.png?raw=true)
 
-### 2. Over HTTP in the REST style.
+### 2. Over HTTP in the REST style
 
 Write your SPARQL query in a file (e.g. *query.rq*) and submit it to the SPARQL endpoint using `curl`:
 
@@ -142,7 +142,31 @@ detritivorous
 fungivorous
 ```
 
-### 3. Using the SLIMER package.
+### 3. Using the SLIMER package
+
+We have developed SLIMER, an R package that provides a set of functions for retrieving/updating trophic information from SLIME, and that requires no prior knowledge of the SPARQL query language.
+Each function in SLIMER wraps a SPARQL query template that allows users to retrieve specific information (e.g. diet, guild, interaction) for a taxon, using either its name or a taxonomic identifier.
+
+```r
+> install.packages("https://github.com/nleguillarme/SLIME/releases/download/v1.0.0/SLIMER_1.0.0.tar.gz", repos = NULL, type="source")
+> library(SLIMER)
+> endpoint_url <- "http://0.0.0.0:7200/repositories/slime"
+> get.diets(sciName = "Nothrus", endpoint = endpoint_url)
+# A tibble: 9 × 9
+  queryName queryId matchName          matchId   dietId       dietName          reference source                inferred
+  <chr>     <lgl>   <chr>              <list>    <chr>        <chr>             <list>    <chr>                 <chr>   
+1 Nothrus   NA      Nothrus silvestris <chr [4]> SFWO:0000479 detritivorous     <chr [2]> slime:betsi           false   
+2 Nothrus   NA      Nothrus silvestris <chr [4]> SFWO:0000483 fungivorous       <chr [2]> slime:betsi           false   
+3 Nothrus   NA      Nothrus silvestris <chr [4]> SFWO:0000479 detritivorous     <chr [1]> slime:betsi           true    
+4 Nothrus   NA      Nothrus silvestris <chr [4]> SFWO:0000483 fungivorous       <chr [1]> slime:betsi           true    
+5 Nothrus   NA      Nothrus silvestris <chr [4]> SFWO:0000485 microbivorous     <chr [1]> slime:betsi           true    
+6 Nothrus   NA      Nothrus silvestris <chr [4]> SFWO:0000513 microphytophagous <chr [1]> slime:betsi           true    
+7 Nothrus   NA      Nothrus silvestris <chr [4]> SFWO:0000477 carnivorous       <chr [1]> slime:globi_oribatida true    
+8 Nothrus   NA      Nothrus silvestris <chr [4]> SFWO:0000491 predaceous        <chr [1]> slime:globi_oribatida true    
+9 Nothrus   NA      Nothrus silvestris <chr [4]> SFWO:0000497 nematophagous     <chr [1]> slime:globi_oribatida true
+```
+
+See the package [vignette](https://github.com/nleguillarme/SLIME/blob/main/SLIMER/vignettes/SLIMER.Rmd) for more examples on how to use SLIMER.
 
 ## How to cite SLIME?
 
