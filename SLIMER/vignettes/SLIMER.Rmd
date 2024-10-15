@@ -1,0 +1,162 @@
+---
+title: "Retrieving trophic information from SLIME: a how-to."
+author: "<Author 1> and <Author 2>"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{SLIMER}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+# Load required libraries and functions
+library(SLIMER)
+```
+
+# Introduction
+
+This vignette demonstrates the use of the functions provided by the SLIMER package for executing SPARQL queries and retrieving trophic information from the SLIME knowledge graph.
+
+# Prerequisites
+
+Before using the functions, make sure to install the SLIMER package and load it:
+
+```{r}
+# Install and load the package
+# install.packages("./path/to/SLIMER_1.0.0.tar.gz", repos = NULL, type="source")
+library(SLIMER)
+```
+
+# SPARQL Endpoint Configuration
+
+Set up the SPARQL endpoint URL that you will be querying:
+
+```{r}
+# Replace 'endpoint_url' with the actual SPARQL endpoint URL
+endpoint_url <- "http://129.88.204.79:7200/repositories/gratin-20240723"
+```
+
+# List the datasets integrated in SLIME
+
+Use the get.sources function to retrieve a list of integrated datasets:
+
+```{r}
+# Retrieve a list of data sources
+sources <- get.sources(endpoint = endpoint_url)
+
+# Display the data frame
+print(sources)
+```
+
+# Retrieve Metadata for a Specific Data Source
+
+Select a dataset from the obtained list and retrieve its metadata using the get.source.metadata function:
+
+```{r}
+# Select a data source
+selected_source <- sources[1]
+
+# Retrieve metadata for the selected data source
+metadata <- get.source.metadata(source = selected_source, endpoint = endpoint_url)
+
+# Display the metadata
+print(metadata)
+```
+
+# Retrieve Diets Information
+
+Use the get.diets function to retrieve information about diets based on Taxonomy ID or scientific name:
+
+```{r}
+# Example for retrieving diets information based on Taxonomy ID
+diets_info <- get.diets(taxid = c("GBIF:2130185", "NCBI:55786"), endpoint = endpoint_url)
+
+print(diets_info)
+```
+
+```{r}
+# Example for retrieving diets information based on scientific name
+diets_info <- get.diets(sciName = c("Tetranychus urticae", "Acrobeles"), endpoint = endpoint_url)
+
+print(diets_info)
+```
+
+# Retrieve Interactions Information
+
+Use the get.interactions function to retrieve information about interactions based on Taxonomy ID or scientific name:
+
+```{r}
+# Example for retrieving interactions information based on Taxonomy ID
+interactions_info <- get.interactions(taxid = c("GBIF:2130185", "NCBI:55786"), endpoint = endpoint_url)
+
+# Display the data frame
+print(interactions_info)
+```
+
+```{r}
+# Example for retrieving interactions information based on scientific name
+interactions_info <- get.interactions(sciName = c("Tetranychus urticae", "Acrobeles"), endpoint = endpoint_url)
+
+# Display the data frame
+print(interactions_info)
+```
+
+# Retrieve Potential Interactions Information
+
+Use the get.potential.interactions function to retrieve information about potential interactions based on Taxonomy ID or scientific name:
+
+```{r}
+# Example for retrieving interactions information based on Taxonomy ID
+interactions_info <- get.potential.interactions(taxid = c("GBIF:2130185", "NCBI:55786"), endpoint = endpoint_url)
+
+# Display the data frame
+print(interactions_info)
+```
+
+```{r}
+# Example for retrieving potential interactions information based on scientific name
+interactions_info <- get.potential.interactions(sciName = c("Tetranychus urticae", "Acrobeles"), endpoint = endpoint_url)
+
+# Display the data frame
+print(interactions_info)
+```
+
+# Retrieve Guilds Information
+
+Use the get.guilds function to retrieve information about guilds based on Taxonomy ID or scientific name:
+
+```{r}
+# Example for retrieving guilds information based on Taxonomy ID
+guilds_info <- get.guilds(taxid = c("GBIF:2130185", "NCBI:55786"), endpoint = endpoint_url)
+
+# Display the data frame
+print(guilds_info)
+```
+
+```{r}
+# Example for retrieving guilds information based on scientific name
+guilds_info <- get.guilds(sciName = c("Tetranychus urticae", "Acrobeles"), endpoint = endpoint_url)
+
+# Display the data frame
+print(guilds_info)
+```
+
+# Retrieve Trophic Groups Information
+
+Use the get.trophic.groups function to retrieve information about trophic groups based on Taxonomy ID or scientific name:
+
+```{r}
+# Example for retrieving trophic groups information based on Taxonomy ID
+groups_info <- get.trophic.groups(taxid = c("GBIF:2130185", "NCBI:55786"), endpoint = endpoint_url)
+
+# Display the data frame
+print(groups_info)
+```
+
+```{r}
+# Example for retrieving trophic groups information based on scientific name
+groups_info <- get.trophic.groups(sciName = c("Tetranychus urticae", "Acrobeles"), endpoint = endpoint_url)
+
+# Display the data frame
+print(groups_info)
+```

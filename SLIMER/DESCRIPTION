@@ -1,0 +1,29 @@
+Package: SLIMER
+Type: Package
+Title: A package to retrieve trophic information from SLIME, the semantic Soil-Life Metaweb
+Version: 1.0.0
+Author: Author 1 <email@mail.com>
+Maintainer: Author 1 <email@mail.com>
+Description: The SLIMER package provides functions for executing SPARQL queries and retrieving trophic information from the SLIME knowledge graph.
+License: GPL (>= 2)
+Encoding: UTF-8
+LazyData: true
+Config/Needs/website: usethis, pkgdown
+RoxygenNote: 7.3.1
+URL:
+Imports: 
+    stringr,
+    purrr,
+    dplyr,
+    httr2,
+    anytime,
+    tibble,
+    memoise,
+    rlang
+Depends: R (>= 4.3)
+Suggests: 
+    knitr,
+    rmarkdown,
+    pkgdown
+VignetteBuilder: knitr
+BugReports:
