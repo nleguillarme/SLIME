@@ -129,6 +129,8 @@ You can use SPARQL queries to retrieve information from SLIME. There are three w
 
 Access the GraphDB Workbench at http://localhost:7200/. Choose SPARQL from the navigation bar, enter your query and hit Run, as shown in this example:
 
+![SPARQL Query and Update](https://github.com/nleguillarme/SLIME/blob/main/img/sparql_workbench.png?raw=true)
+
 ## How to cite SLIME?
 
 *Coming soon.*
