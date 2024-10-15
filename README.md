@@ -131,6 +131,19 @@ Access the GraphDB Workbench at http://localhost:7200/. Choose SPARQL from the n
 
 ![SPARQL Query and Update](https://github.com/nleguillarme/SLIME/blob/main/img/sparql_workbench.png?raw=true)
 
+### 2. Over HTTP in the REST style.
+
+Write your SPARQL query in a file (e.g. *query.rq*) and submit it to the SPARQL endpoint using `curl`:
+
+```bash
+$ curl -H "Accept: text/csv" --data-urlencode "query@query.rq" http://0.0.0.0:7200/repositories/slime
+dietName
+detritivorous
+fungivorous
+```
+
+### 3. Using the SLIMER package.
+
 ## How to cite SLIME?
 
 *Coming soon.*
