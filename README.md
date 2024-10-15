@@ -79,7 +79,7 @@ Configure the connection to the repository in the `[load]` section of *graph.cfg
 [load]
 id=graphdb
 conn_type=http
-host=0.0.0.0
+host=172.17.0.1
 port=7200
 user=<user-login-if-any>
 password=<user-password-if-any>
